@@ -128,7 +128,8 @@ function montarResumo() {
         '<p><strong>Endereço:</strong> ' + pedido.endereco.rua + ', ' + pedido.endereco.numero +
         ' - ' + pedido.endereco.bairro + ', ' + pedido.endereco.cidade + '</p>' +
         '<p><strong>Contato:</strong> ' + pedido.contato.nome + ' - ' + pedido.contato.telefone + '</p>';
-
+    
+    // só mostra se a função do Luiz estiver pronta (se não, mostra mensagem de erro)
     if (typeof calcularOrcamento !== 'function') {
         document.getElementById('total').textContent = 'Cálculo ainda não disponível.';
         return;
@@ -138,12 +139,13 @@ function montarResumo() {
     const resultado = calcularOrcamento(pedido, config);
     total = resultado.total;
     document.getElementById('total').textContent =
-        'Total estimado: ' + total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        'Total estimado: ' + total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // formata numero como dinheiro
 }
 
 // Enviar pelo WhatsApp (usa a função do Fábio)
 document.getElementById('btn-enviar').addEventListener('click', function () {
-    // Se o whatsapp.js do Fábio ainda não estiver pronto, avisa e para aqui
+
+    // Se a funcão do Fábio ainda não estiver pronta, mostra mensagem de erro
     if (typeof gerarLinkWhatsApp !== 'function') {
         document.getElementById('erro').textContent = 'Envio pelo WhatsApp ainda não disponível.';
         return;
@@ -154,7 +156,7 @@ document.getElementById('btn-enviar').addEventListener('click', function () {
 });
 
 // Funções de apoio
-// Valor de um campo, sem espaços nas pontas
+// pega um valor (id) e deixa ele sem espaços pra nao ter que colocar sempre .trim() no código ex: document.getElementById('nome').value.trim()
 function valor(id) {
     return document.getElementById(id).value.trim();
 }
