@@ -58,7 +58,7 @@ Depois acesse `http://localhost:8000`.
 - [x] Envio pelo WhatsApp
 - [ ] Testes e correções
 - [ ] Polimento e responsividade
-- [ ] Publicação no GitHub Pages
+- [x] Publicação no GitHub Pages
 ---
 ## ⚠️ Aviso
 
