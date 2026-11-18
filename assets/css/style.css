@@ -16,7 +16,11 @@ body {
     background: var(--grafite);
 }
 
+/* Marca: logo + nome lado a lado */
 .marca {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
     color: white;
     font-size: 1.4rem;
     font-weight: 700;
@@ -55,6 +59,225 @@ body {
 .rodape {
     background: var(--grafite);
     color: var(--cinza);
+}
+
+/* Página inicial */
+
+/* Rolagem suave ao clicar nos links do menu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Menu fixo no topo */
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem 1.5rem;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+}
+
+.menu-links {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-links a {
+    color: #D4D4D8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu-links a:hover {
+    color: var(--laranja);
+}
+
+/* Celular: os links descem para uma linha própria */
+@media (max-width: 767.98px) {
+    .menu-links {
+        order: 3;
+        width: 100%;
+        gap: 1.25rem;
+        font-size: .95rem;
+    }
+}
+
+/* A seção não fica escondida atrás do menu fixo */
+.secao {
+    scroll-margin-top: 90px;
+}
+
+/* Chamada principal com um brilho laranja no fundo */
+.hero {
+    padding: 5rem 0;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(249, 115, 22, .25), transparent 45%),
+        var(--grafite);
+}
+
+.hero-local {
+    display: inline-block;
+    padding: .35rem .9rem;
+    margin-bottom: 1rem;
+    border-radius: 999px;
+    background: rgba(249, 115, 22, .15);
+    color: var(--laranja);
+    font-weight: 600;
+    font-size: .95rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-texto {
+    max-width: 48ch;
+    color: #D4D4D8;
+}
+
+/* Botão com contorno claro (no fundo escuro) */
+.btn-contorno {
+    border: 1.5px solid rgba(255, 255, 255, .4);
+    color: #fff;
+}
+
+.btn-contorno:hover {
+    background: #fff;
+    color: var(--grafite);
+}
+
+/* Cartão de exemplo de orçamento */
+.exemplo {
+    padding: 1.75rem;
+    border-radius: 16px;
+    background: #fff;
+    color: var(--grafite);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+}
+
+.exemplo-titulo {
+    font-weight: 700;
+    color: #71717A;
+    font-size: .9rem;
+}
+
+.exemplo-linha {
+    display: flex;
+    justify-content: space-between;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--cinza);
+}
+
+.exemplo-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--grafite);
+    color: var(--laranja);
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+/* Títulos das seções */
+main h2 {
+    font-weight: 800;
+}
+
+/* Como funciona: cada passo vira um cartão */
+.passo {
+    height: 100%;
+    padding: 1.5rem;
+    border: 1.5px solid var(--cinza);
+    border-radius: 16px;
+}
+
+.passo-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: .75rem;
+    border-radius: 50%;
+    background: var(--laranja);
+    color: var(--grafite);
+    font-weight: 800;
+}
+
+/* Seção com fundo cinza */
+.secao-cinza {
+    background: var(--cinza);
+}
+
+/* Cartões de serviço: sobem um pouco ao passar o mouse */
+.servico {
+    height: 100%;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    border-top: 4px solid var(--laranja);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.servico:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+}
+
+.servico-icone {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+/* Faixa laranja no final */
+.chamada {
+    background: var(--laranja);
+    color: var(--grafite);
+}
+
+/* Botão escuro (usado na faixa laranja) */
+.btn-grafite {
+    background: var(--grafite);
+    color: #fff;
+}
+
+.btn-grafite:hover {
+    background: #3A3D44;
+    color: #fff;
+}
+
+/* Link do WhatsApp no rodapé */
+.link-whatsapp {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+/* Quem prefere menos animação não vê os efeitos */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .servico {
+        transition: none;
+    }
 }
 
 /* Formulário */
