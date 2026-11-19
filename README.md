@@ -38,7 +38,7 @@ Site de orçamento de serviços elétricos para um eletricista autônomo de **Jo
 Não precisa instalar nada. Clone o repositório e abra com um servidor local (necessário para carregar o `servicos.json`):
 
 ```bash
-git clone https://github.com/eumarllonlran/faisca-orcamentos.git
+git clone https://github.com/eumarllonlran0/faisca-orcamentos.git
 cd faisca-orcamentos
 
 # opção 1: extensão Live Server do VS Code
@@ -68,7 +68,7 @@ Os valores exibidos são **estimativas**. O valor final depende de visita técni
 
 | Nome | Responsabilidade | GitHub |
 |---|---|---|
-| Marllon Lorran | Formulário em etapas (`orcamento.html`, `wizard.js`) | [@eumarllonlran](https://github.com/eumarllonlran) |
+| Marllon Lorran | Formulário em etapas (`orcamento.html`, `wizard.js`) | [@eumarllonlran0](https://github.com/eumarllonlran0) |
 | Fábio Henrique | Integrações (`cep.js`, `whatsapp.js`) | — |
 | Luiz Vinicius Brito Correia | Cálculo (`calculo.js`) | — |
 | Pedro Henrique | Dados e visual (`servicos.json`, `style.css`) | — |
